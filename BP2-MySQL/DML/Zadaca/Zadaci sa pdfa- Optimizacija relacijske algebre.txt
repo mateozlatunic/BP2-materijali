@@ -1,0 +1,31 @@
+Zadaci sa PDF-a (bilo ih je jos samo su laksi pa nisam spominjao)
+
+ZAD:
+-- Napiši optimizirani plan izvođenja upita koji će prikazati naziv artikla i količinu u 
+   kojoj je on izdan nastavkama računa gdje je naziv artikla 'Milka čokolada' i količina veća od 2.
+-- pi naziv, kolicina ((sigma naziv='Milka čokolada' (artikl)) ⨝ artikl.id=id_artikl pi id_artikl, kolicina (sigma kolicina>2(stavka_racun)))
+
+ZAD:
+-- Napiši optimizirani plan izvođenja upita koji će prikazati najveću cijenu artikala koji imaju cijenu manju od 10.
+-- γ max(cijena)→veci (sigma cijena<10(artikl))
+
+ZAD:
+-- Napiši optimizirani plan izvođenja upita koji će prikazati imena i prezimena kupaca i zaposlenika koji imaju jednako ime.
+-- pi ime, prezime(kupac) ⨝ kupac.ime=zaposlenik.ime pi ime, prezime(zaposlenik)
+
+ZAD:
+-- Napiši optimizirani plan izvođenja upita koji će prikazati brojeve računa i ukupnu količinu artikla 'Milka čokolada' izdanu na
+   pojedinom računu, a pritom prikazati samo račune koji imaju broj manji od '00003'.
+-- rac=sigma broj<'00003'
+-- art=sigma naziv='Milka čokolada'
+-- x=rac ⨝ racun.id=id_racun stavka_racun
+-- ⨝ artikl.id=id_artikl art
+-- pi broj,kol_čok(γ racun.id,broj,sum(kolicina)→kol_čok(x))
+
+ZAD:
+--  Napiši optimizirani plan izvođenja upita koji će prikazati naziv artikla i količinu u kojoj je on izdan na stavkama računa gdje je naziv artikla 'Milka čokolada' i količina veća od 2.
+-- pi naziv,kolicina((sigma naziv='Milka čokolada'(artikl))⨝artikl.id=id_artikl pi id_artikl,kolicina (sigma kolicina>2 (stavka_racun)))
+
+ZAD:
+-- napisi ipit koji prikazuje ime i prezime kupaca i zaposlenika, s time da imaju ime='Tea'
+-- (pi ime,prezime(sigma ime='Tea'(kupac)))∪ (pi ime, prezime(sigma ime='Tea'(zaposlenik)))

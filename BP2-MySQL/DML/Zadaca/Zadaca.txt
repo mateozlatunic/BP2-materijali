@@ -1,0 +1,17 @@
+-- DOMACA ZADACA
+
+ZAD 1
+-- Napiši upit i optimizirani plan izvođenja upita koji će prikazati nazive i cijene artikala čija je cijena u 
+   rasponu 5 i 20(tj. [5, 20])
+-- pi naziv, cijena(sigma cijena>5 and cijena<20 artikl)
+
+ZAD 2
+-- Napiši upit i optimizirani plan izvođenja upita koji će prikazati prezimena svih zaposlenika zajedno sa nazivima artikala
+   koje su izdali kroz račune, a pritom pritom prikazati samo zaposlenike sa prezimenom 'Marić' i artikle sa cijenom većom od 20
+-- z = σ prezime = 'Marić' (zaposlenik)
+-- a = σ cijena > 20 (artikl)
+-- π prezime, naziv (z ⨝ zaposlenik.id = racun.id_zaposlenik racun ⨝ racun.id = stavka_racun.id_racun stavka_racun 
+                    ⨝ stavka_racun.id_artikl = artikl.id a)
+
+ZAD 3
+pi ime,prezime,broj(sigma ime='Tea' or prezime='Sirotić'(kupac)⨝kupac.id=racun.id_kupac (racun))
